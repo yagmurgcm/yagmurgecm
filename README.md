@@ -1,71 +1,70 @@
-# Dijital Duyarlılık ve Makroekonomik Göstergeler Arasındaki İlişki Analizi
+# DSA210-Term-Project
 
-Bu projede, Türkiye’de açıklanan makroekonomik göstergeler ile dijital duyarlılık arasındaki ilişki incelenmektedir. Projede, Google Trends üzerinden elde edilen "euro", "dolar", "faiz" ve "enflasyon" arama trend verileri ile iki resmi ekonomik veri seti (Fiyat Endeksi [Tüketici Fiyatları] (2003=100) ve Bankalarca Açılan Kredilere Uygulanan Ağırlıklı Ortalama Faiz Oranları) kullanılarak zaman serisi analizi yapılacaktır.
+I am a student from Sabancı University, Yağmur Geçim, and this is my DSA210 term project. The aim of this project is to analyze the interaction between digital sentiment—captured through Google Trends search data—and key macroeconomic indicators in Turkey over the last 5 years.
 
-## Proje Hakkında
+These two hypotheses will be tested:
 
-**Amaç:**  
-Projenin temel amacı, dijital arama trendlerinin resmi ekonomik göstergeler (enflasyon ve kredi faiz oranları) ile ilişkisini ortaya koymaktır. Bu ilişki sayesinde, dijital duyarlılık üzerinden erken uyarı sinyalleri yakalanması ve ekonomik politikaların dijital yansımalarının analiz edilmesi hedeflenmektedir.
+**First hypothesis:** Increased search interest for economic terms (e.g., "inflation" and "interest") correlates with higher consumer price index values and shifts in credit interest rates.  
+**Second hypothesis:** Changes in digital sentiment, as measured by search trends for terms like "euro" and "dollar," precede movements in macroeconomic indicators, indicating potential early warning signals.
 
-**Kapsam:**  
-- Google Trends üzerinden "euro", "dolar", "faiz" ve "enflasyon" terimlerinin son 1 yıl içerisindeki arama trendlerinin toplanması.
-- TÜİK tarafından yayınlanan Fiyat Endeksi (Tüketici Fiyatları) (2003=100) verisinin temini.
-- TCMB tarafından yayınlanan Bankalarca Açılan Kredilere Uygulanan Ağırlıklı Ortalama Faiz Oranları verisinin temini.
-- Zaman serisi analizi, korelasyon testleri (ör. Pearson, Spearman) ve zaman gecikmesi (lag) etkilerinin incelenmesi (ör. Granger nedensellik testi).
+---
 
-## Veri Kaynakları
+## Contents
 
-- **Google Trends Verileri:**  
-  - Arama terimleri: "euro", "dolar", "faiz", "enflasyon".  
-  - Veriler, Google Trends API veya manuel indirme yöntemleriyle elde edilecektir.
+- [Motivation](#motivation)
+- [Project Goal](#project-goal)
+- [Data Sources and Preprocessing](#data-sources-and-preprocessing)
+- [Data Analysis](#data-analysis)
+- [Findings](#findings)
+- [Hypothesis Testing](#hypothesis-testing)
+- [Machine Learning Techniques](#machine-learning-techniques)
+- [Limitations and Future Work](#limitations-and-future-work)
 
-- **Fiyat Endeksi (Tüketici Fiyatları) (2003=100):**  
-  - Resmi TÜİK veri portalından temin edilebilir.  
-  - [TÜİK Veri Portalı](https://data.tuik.gov.tr/)
+---
 
-- **Bankalarca Açılan Kredilere Uygulanan Ağırlıklı Ortalama Faiz Oranları:**  
-  - Resmi TCMB web sitesinden temin edilebilir.  
-  - [TCMB İstatistikler](https://www.tcmb.gov.tr/wps/wcm/connect/tcmb+tr/tcmb+tr/main+menu/istatistikler)
+## Motivation
 
-## Kullanılan Yöntem ve Teknolojiler
+Economic sentiment and policy shifts are increasingly mirrored in digital behavior. Understanding how online search trends relate to traditional economic indicators can provide valuable insights into market dynamics and serve as an early warning system. By analyzing data from Google Trends alongside official data on the Consumer Price Index (CPI) and Average Weighted Credit Interest Rates, this project aims to explore the potential predictive power of digital sentiment on macroeconomic performance.
 
-- **Programlama Dili:** Python
-- **Kütüphaneler:**  
-  - `pandas`, `numpy` (veri işleme ve analiz)  
-  - `matplotlib`, `seaborn` veya alternatif görselleştirme kütüphaneleri (grafik oluşturma)  
-  - `statsmodels` (istatistiksel testler, Granger nedensellik testi)  
-  - `pytrends` (Google Trends verilerinin toplanması)
-- **Analiz Yöntemleri:**  
-  - Zaman serisi analizi  
-  - Korelasyon analizi (Pearson ve Spearman)  
-  - Granger nedensellik testi (zaman gecikmesi etkilerinin incelenmesi)
+---
 
-## Proje Akışı
+## Project Goal
 
-1. **Veri Toplama:**  
-   - Google Trends API kullanılarak gerekli arama trend verilerinin toplanması.
-   - TÜİK ve TCMB kaynaklarından ilgili ekonomik verilerin indirilmesi.
+The goal of this project is to uncover and quantify the relationship between digital sentiment—as reflected in search trends for "euro", "dollar", "interest", and "inflation"—and key economic indicators such as the CPI (2003=100) and bank credit interest rates. Through this analysis, I aim to:
+- Identify correlations and time-lagged effects between search trends and economic indicators.
+- Determine if shifts in digital sentiment can serve as a precursor to changes in macroeconomic conditions.
+- Provide insights that could support the development of early warning systems for economic policy makers.
 
-2. **Veri Temizleme ve Ön İşleme:**  
-   - Tarih uyumluluğu sağlanması ve verilerin ölçeklendirilmesi.
-   - Gerekli veri dönüşümlerinin uygulanması.
+---
 
-3. **Analiz:**  
-   - Zaman serisi grafiklerinin oluşturulması.
-   - Korelasyon analizlerinin yapılması.
-   - Gecikme etkilerinin incelenmesi için Granger nedensellik testlerinin uygulanması.
+## Data Sources and Preprocessing
 
-4. **Sonuçların Yorumlanması:**  
-   - Elde edilen bulguların yorumlanması.
-   - Dijital duyarlılık ile ekonomik göstergeler arasındaki ilişkinin değerlendirilmesi.
+### Data Sources
+1. **Google Trends Data:**  
+   - Terms: "euro", "dollar", "interest", "inflation"  
+   - Time Frame: Last 5 years  
+   - Data will be collected via the Google Trends API or manual downloads.
 
-5. **Raporlama ve Sunum:**  
-   - Analiz sonuçlarının görselleştirilmesi ve raporlanması.
-   - Proje çıktılarının sunulması.
+2. **Consumer Price Index (CPI) (2003=100):**  
+   - Sourced from the Turkish Statistical Institute (TÜİK).  
+   - [TÜİK Data Portal](https://data.tuik.gov.tr/)
 
-## Nasıl Çalıştırılır?
+3. **Average Weighted Credit Interest Rates:**  
+   - Sourced from the Central Bank of the Republic of Turkey (TCMB).  
+   - [TCMB Statistics](https://www.tcmb.gov.tr/wps/wcm/connect/tcmb+tr/tcmb+tr/main+menu/istatistikler)
 
-1. **Gerekli Kütüphaneleri Yükleyin:**
+### Preprocessing Steps
+- **Data Cleaning:**  
+  Remove or correct any missing or inconsistent data points.
+  
+- **Time Series Alignment:**  
+  Ensure that the time intervals for Google Trends data and economic indicators match (e.g., monthly data).
 
-   ```bash
-   pip install pandas numpy matplotlib statsmodels pytrends
+- **Data Merging:**  
+  Combine the datasets into a single time-indexed dataset for comprehensive analysis.
+
+
+
+
+
+
