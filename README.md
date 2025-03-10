@@ -1,49 +1,71 @@
-# DSA210 Term Project
+# Dijital Duyarlılık ve Makroekonomik Göstergeler Arasındaki İlişki Analizi
 
-## Overview
-I am Yağmur Geçim, a student at Sabancı University, and this repository contains my DSA210 term project. The objective of this project is to analyze the relationship between my study focus time and key influencing factors such as my daily mood, sleep hours, and social media usage. By examining self-collected data, I aim to identify patterns that affect my ability to concentrate and optimize my study habits accordingly.
+Bu projede, Türkiye’de açıklanan makroekonomik göstergeler ile dijital duyarlılık arasındaki ilişki incelenmektedir. Projede, Google Trends üzerinden elde edilen "euro", "dolar", "faiz" ve "enflasyon" arama trend verileri ile iki resmi ekonomik veri seti (Fiyat Endeksi [Tüketici Fiyatları] (2003=100) ve Bankalarca Açılan Kredilere Uygulanan Ağırlıklı Ortalama Faiz Oranları) kullanılarak zaman serisi analizi yapılacaktır.
 
-## Hypotheses
-This study tests the following hypotheses:
+## Proje Hakkında
 
-1. **Mood and Study Focus:** A positive daily mood is associated with longer and more productive study sessions, whereas a negative mood leads to reduced focus time.
-2. **Sleep Hours and Study Focus:** Insufficient sleep negatively impacts my ability to concentrate and reduces my overall study efficiency.
-3. **Social Media Usage and Study Focus:** Higher social media usage, particularly before study sessions, leads to decreased focus time due to distraction and cognitive overload.
+**Amaç:**  
+Projenin temel amacı, dijital arama trendlerinin resmi ekonomik göstergeler (enflasyon ve kredi faiz oranları) ile ilişkisini ortaya koymaktır. Bu ilişki sayesinde, dijital duyarlılık üzerinden erken uyarı sinyalleri yakalanması ve ekonomik politikaların dijital yansımalarının analiz edilmesi hedeflenmektedir.
 
-## Table of Contents
-- [Motivation](#motivation)
-- [Project Goal](#project-goal)
-- [Data Sources and Preprocessing](#data-sources-and-preprocessing)
-- [Data Analysis](#data-analysis)
-- [Findings](#findings)
-  - [Hypothesis Testing](#hypothesis-testing)
-  - [Machine Learning Techniques](#machine-learning-techniques)
-- [Limitations and Future Work](#limitations-and-future-work)
+**Kapsam:**  
+- Google Trends üzerinden "euro", "dolar", "faiz" ve "enflasyon" terimlerinin son 1 yıl içerisindeki arama trendlerinin toplanması.
+- TÜİK tarafından yayınlanan Fiyat Endeksi (Tüketici Fiyatları) (2003=100) verisinin temini.
+- TCMB tarafından yayınlanan Bankalarca Açılan Kredilere Uygulanan Ağırlıklı Ortalama Faiz Oranları verisinin temini.
+- Zaman serisi analizi, korelasyon testleri (ör. Pearson, Spearman) ve zaman gecikmesi (lag) etkilerinin incelenmesi (ör. Granger nedensellik testi).
 
-## Motivation
-The ability to focus during study sessions is crucial for academic success. However, multiple factors such as mood, sleep quality, and social media usage may influence concentration levels. Understanding how these variables interact can help optimize study habits and improve overall productivity. By analyzing self-collected data, this study aims to:
+## Veri Kaynakları
 
-- Examine how daily mood affects study focus time.
-- Investigate the impact of sleep duration on concentration and study efficiency.
-- Assess whether social media usage influences my ability to maintain focus during study sessions.
-- Identify patterns that could improve my time management and academic performance.
+- **Google Trends Verileri:**  
+  - Arama terimleri: "euro", "dolar", "faiz", "enflasyon".  
+  - Veriler, Google Trends API veya manuel indirme yöntemleriyle elde edilecektir.
 
-## Project Goal
-The primary goal of this project is to uncover patterns in my study focus time in relation to my mood, sleep hours, and social media usage. By leveraging data from the Samsung Health app (including sleep hours, social media activity, and mood tracking) and manually recorded study focus times (Forest), this study aims to provide actionable insights for improving my study habits.
+- **Fiyat Endeksi (Tüketici Fiyatları) (2003=100):**  
+  - Resmi TÜİK veri portalından temin edilebilir.  
+  - [TÜİK Veri Portalı](https://data.tuik.gov.tr/)
 
-## Data Sources and Preprocessing
-The dataset used in this study is collected from the **Samsung Health app** and personal study logs(Forest), providing the following metrics:
+- **Bankalarca Açılan Kredilere Uygulanan Ağırlıklı Ortalama Faiz Oranları:**  
+  - Resmi TCMB web sitesinden temin edilebilir.  
+  - [TCMB İstatistikler](https://www.tcmb.gov.tr/wps/wcm/connect/tcmb+tr/tcmb+tr/main+menu/istatistikler)
 
-- **Mood Tracker:** Self-reported mood rating (on a scale from 1 to 5) recorded at the end of each day.
-- **Sleep Hours:** Total sleep duration, sleep start and end times.
-- **Social Media Usage:** Time spent on specific apps (YouTube & Instagram) before and during study periods.
-- **Study Focus Time:** The duration of uninterrupted, high-concentration study sessions recorded daily.
+## Kullanılan Yöntem ve Teknolojiler
 
-The data will be cleaned and processed to ensure consistency and accuracy before conducting the analysis.
+- **Programlama Dili:** Python
+- **Kütüphaneler:**  
+  - `pandas`, `numpy` (veri işleme ve analiz)  
+  - `matplotlib`, `seaborn` veya alternatif görselleştirme kütüphaneleri (grafik oluşturma)  
+  - `statsmodels` (istatistiksel testler, Granger nedensellik testi)  
+  - `pytrends` (Google Trends verilerinin toplanması)
+- **Analiz Yöntemleri:**  
+  - Zaman serisi analizi  
+  - Korelasyon analizi (Pearson ve Spearman)  
+  - Granger nedensellik testi (zaman gecikmesi etkilerinin incelenmesi)
 
-## Next Steps
-The project will proceed with data analysis, hypothesis testing, and the application of machine learning techniques to uncover patterns and insights. Future work may include expanding the dataset, incorporating additional variables, and refining the analysis to enhance predictive accuracy.
+## Proje Akışı
 
----
-Stay tuned for updates as I continue to analyze my data and share my findings!
+1. **Veri Toplama:**  
+   - Google Trends API kullanılarak gerekli arama trend verilerinin toplanması.
+   - TÜİK ve TCMB kaynaklarından ilgili ekonomik verilerin indirilmesi.
 
+2. **Veri Temizleme ve Ön İşleme:**  
+   - Tarih uyumluluğu sağlanması ve verilerin ölçeklendirilmesi.
+   - Gerekli veri dönüşümlerinin uygulanması.
+
+3. **Analiz:**  
+   - Zaman serisi grafiklerinin oluşturulması.
+   - Korelasyon analizlerinin yapılması.
+   - Gecikme etkilerinin incelenmesi için Granger nedensellik testlerinin uygulanması.
+
+4. **Sonuçların Yorumlanması:**  
+   - Elde edilen bulguların yorumlanması.
+   - Dijital duyarlılık ile ekonomik göstergeler arasındaki ilişkinin değerlendirilmesi.
+
+5. **Raporlama ve Sunum:**  
+   - Analiz sonuçlarının görselleştirilmesi ve raporlanması.
+   - Proje çıktılarının sunulması.
+
+## Nasıl Çalıştırılır?
+
+1. **Gerekli Kütüphaneleri Yükleyin:**
+
+   ```bash
+   pip install pandas numpy matplotlib statsmodels pytrends
