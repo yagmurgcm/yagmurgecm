@@ -40,6 +40,33 @@ The dataset for this study will be collected from the following sources:
 1. **Data Cleaning:** Ensuring consistency between different data sources.
 2. **Time Alignment:** Synchronizing economic data and Google Trends data by month.
 3. **Normalization:** Adjusting search volumes to account for overall changes in Google search activity.
+4. **Additional Columns:** New columns were created for:
+   - **Inflation Rate Difference**: The difference between the current month’s inflation rate and the previous month’s inflation rate.
+   - **Interest Rate Change**: The change in the TCMB interest rate compared to the previous month.
 
+## Data Analysis
+In this section, the analysis focuses on exploring relationships between the **TCMB data** and **Google search trends**. The main techniques used for this analysis include:
 
+### Correlation Analysis:
+Spearman’s rank correlation was computed to examine how changes in **interest rates** and **inflation rates** correlate with fluctuations in Google search volumes for terms like **"faiz"** and **"enflasyon"**.
+
+### Hypothesis Testing:
+Two hypotheses were tested:
+1. **Interest Rate Changes and Search Trends**: Whether changes in TCMB's interest rate have a noticeable impact on public search behavior related to financial terms.
+2. **Inflation and Public Interest**: Whether inflation correlates with an increase in searches for "enflasyon" and related terms.
+
+**Results from Hypothesis Testing**:
+- **Interest Rate Correlation**: A moderate positive correlation was found between TCMB interest rate changes and searches for "faiz" (interest rate).
+- **Inflation and Search Trends**: A strong positive correlation was found between the increase in inflation rates and searches for "enflasyon" (inflation), confirming that public concern about inflation drives interest in related terms.
+
+## Findings
+- Public interest in financial topics such as inflation and interest rates is highly reactive to changes in TCMB's economic policies.
+- The regression model suggests that interest rate changes are a significant predictor of increases in search volumes related to "faiz" (interest rate).
+- Google Trends data can serve as a useful proxy for measuring public sentiment regarding economic conditions.
+
+## Limitations and Future Work
+
+### Limitations:
+- The analysis assumes that search volume is a direct reflection of public concern, but other factors may influence search behavior (e.g., media coverage, political events).
+- The time span of five years may not capture long-term economic trends.
 
