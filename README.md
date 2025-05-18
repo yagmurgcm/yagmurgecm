@@ -76,6 +76,40 @@ Two hypotheses were tested:
 
 *The scatter plot shows the relationship between TCMB inflation rate (annual percentage change) and the Google search trend for "enflasyon" (inflation). The Spearman correlation coefficient of 0.66 suggests a moderate positive correlation, indicating that as TCMB's inflation rate increases, public interest in searching for "enflasyon" also rises. The p-value of 0.0 confirms the correlation is statistically significant, allowing us to reject the null hypothesis (H₀), meaning there is a significant relationship between inflation rates and public search behavior regarding inflation. This indicates that as inflation rises, people tend to search more for information about inflation, reflecting a higher public concern about economic conditions.
 
+## Machine Learning
+**-TCMB Interest Rates vs Interest Rates Search Trends**
+
+<img width="658" alt="Ekran Resmi 2025-05-18 17 28 54" src="https://github.com/user-attachments/assets/07703597-fc9f-4e9a-8937-78dd553c11ab" />
+
+The graph above shows the Random Forest model’s predictions of Turkey’s central bank interest rate based solely on Google search trends for "interest".
+With an R² score of 0.76, the model demonstrates a strong fit between public search behavior and actual interest rates, indicating that search data can serve as a valuable predictor even in small datasets.
+
+
+**-TCMB Inflation Rates vs Inflation Rates Search Trends**
+
+<img width="667" alt="Ekran Resmi 2025-05-18 17 31 00" src="https://github.com/user-attachments/assets/eb9de26b-2940-40a4-a4ff-a18f94988111" />
+
+The graph displays the Random Forest model's prediction of Turkey’s official inflation rate based solely on Google search trends related to inflation.
+Although the data shows some variability, the model achieved a solid R² score of 0.44, indicating that search behavior still holds meaningful predictive power for inflation rates.
+
+
+**-TCMB Interest Rates vs Dolar Rates Search Trends**
+
+<img width="653" alt="Ekran Resmi 2025-05-18 17 31 12" src="https://github.com/user-attachments/assets/7596df6e-382d-4f99-baed-e662f1b81f83" />
+
+This graph presents the Linear Regression model's prediction of TCMB interest rates based on Google search trends for the dollar.
+The model underperforms with a relatively low R² score of -0.05, suggesting that dollar search behavior alone may not strongly explain interest rate movements.
+
+
+**-TCMB Interest Rates vs Euro Rates Search Trends**
+
+<img width="661" alt="Ekran Resmi 2025-05-18 17 31 22" src="https://github.com/user-attachments/assets/acd6f5fb-263b-4419-a40b-d1aa8639e22c" />
+
+This plot shows the predictions of the Linear Regression model for Turkey’s interest rate, using only Google search trends for the euro as input.
+The model performs poorly, with a low R² score of -0.21, indicating that euro-related search data alone does not effectively explain changes in interest rates.
+
+
+
 ## Findings
 - Public interest in financial topics such as inflation and interest rates is highly reactive to changes in TCMB's economic policies.
 - The regression model suggests that interest rate changes are a significant predictor of increases in search volumes related to "faiz" (interest rate).
