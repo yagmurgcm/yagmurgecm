@@ -93,22 +93,6 @@ The graph displays the Random Forest model's prediction of Turkey’s official i
 Although the data shows some variability, the model achieved a solid R² score of 0.44, indicating that search behavior still holds meaningful predictive power for inflation rates.
 
 
-**-TCMB Interest Rates vs Dolar Rates Search Trends**
-
-<img width="653" alt="Ekran Resmi 2025-05-18 17 31 12" src="https://github.com/user-attachments/assets/7596df6e-382d-4f99-baed-e662f1b81f83" />
-
-This graph presents the Linear Regression model's prediction of TCMB interest rates based on Google search trends for the dollar.
-The model underperforms with a relatively low R² score of -0.05, suggesting that dollar search behavior alone may not strongly explain interest rate movements.
-
-
-**-TCMB Interest Rates vs Euro Rates Search Trends**
-
-<img width="661" alt="Ekran Resmi 2025-05-18 17 31 22" src="https://github.com/user-attachments/assets/acd6f5fb-263b-4419-a40b-d1aa8639e22c" />
-
-This plot shows the predictions of the Linear Regression model for Turkey’s interest rate, using only Google search trends for the euro as input.
-The model performs poorly, with a low R² score of -0.21, indicating that euro-related search data alone does not effectively explain changes in interest rates.
-
-
 
 ## Findings
 - Public interest in financial topics such as inflation and interest rates is highly reactive to changes in TCMB's economic policies.
